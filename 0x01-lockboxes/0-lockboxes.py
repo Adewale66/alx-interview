@@ -10,8 +10,6 @@ def canUnlockAll(boxes):
     """
     visited = set()
 
-    
-
     def dfs(key):
         if (key in visited):
             return
@@ -21,4 +19,4 @@ def canUnlockAll(boxes):
 
     dfs(0)
 
-    return len(visited)== len(boxes)
+    return len(visited) == len(boxes)
