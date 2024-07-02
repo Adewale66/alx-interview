@@ -11,7 +11,7 @@ def canUnlockAll(boxes):
     visited = set()
 
     def dfs(key):
-        if (key in visited):
+        if (key in visited or key >= len(boxes)):
             return
         visited.add(key)
         for room in boxes[key]:
