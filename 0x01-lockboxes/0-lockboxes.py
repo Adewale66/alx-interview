@@ -8,18 +8,17 @@ def canUnlockAll(boxes):
     """
     Lockboxes
     """
-    visited = [0 for _ in range(len(boxes))]
-    visited[0] = 1
-    start = boxes[0]
+    visited = set()
 
-    def dfs(key, visited, boxes):
-        if (visited[key] == 1):
+    
+
+    def dfs(key):
+        if (key in visited):
             return
-        visited[key] = 1
-        for key in boxes[key]:
-            dfs(key, visited, boxes)
+        visited.add(key)
+        for room in boxes[key]:
+            dfs(room)
 
-    for key in start:
-        dfs(key, visited, boxes)
+    dfs(0)
 
-    return visited.count(1) == len(boxes)
+    return len(visited)== len(boxes)
