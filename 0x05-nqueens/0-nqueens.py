@@ -6,6 +6,16 @@ import sys
 
 
 def checkCol(row, col, board):
+    """checks column
+
+    Args:
+        row (int): row pos
+        col (int): col position
+        board (List[List[int]]): board
+
+    Returns:
+        bool: true if not possible else false
+    """
     for i in range(row):
         if board[i][col] == 1:
             return True
@@ -13,6 +23,15 @@ def checkCol(row, col, board):
 
 
 def checkDig(row, col, board):
+    """checks diagonal
+
+    Args:
+        row (int): row pos
+        col (int): col position
+        board (List[List[int]]): board
+    Returns:
+        bool: true if not possible else false
+    """
     n = len(board)
 
     left_check = col - row
@@ -31,6 +50,14 @@ def checkDig(row, col, board):
 
 
 def get_board(board):
+    """gets the solved board
+
+    Args:
+        board (List[List[int]]): board
+
+    Returns:
+        ListList[int]: solved board
+    """
     board_pos = []
     for i in range(len(board)):
         for j in range(len(board[0])):
@@ -40,6 +67,14 @@ def get_board(board):
 
 
 def solve(queen_count):
+    """n queens algorithm
+
+    Args:
+        queen_count (int): number of queens
+
+    Returns:
+        List[List[int]]: list of boards
+    """
     board = [[0 for _ in range(queen_count)] for _ in range(queen_count)]
     ans = []
 
