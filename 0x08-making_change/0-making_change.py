@@ -5,6 +5,15 @@ Making change
 
 
 def makeChange(coins, total):
+    """make change function
+
+    Args:
+        coins (_type_): _description_
+        total (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     if total < 1:
         return 0
     pos = 0

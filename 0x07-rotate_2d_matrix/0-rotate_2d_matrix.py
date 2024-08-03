@@ -4,6 +4,11 @@
 
 
 def rotate_2d_matrix(mtx):
+    """rotate 2d matrix
+
+    Args:
+        mtx (_type_): _description_
+    """
     n = len(mtx)
     for i in range(n):
         for j in range(i+1, n):
